@@ -25,12 +25,9 @@ do_input <- paste0("do()", input)
 # Extract the chunks bookended by do() and don't()
 pattern <- r"{do\(\).+?don't\(\)}"
 matches <- gregexpr(pattern = pattern, text = do_input)
-cleaned_input <- paste0(
-  unlist(regmatches(do_input, m = matches)),
-  collapse = ""
-)
+target_chunks <- unlist(regmatches(do_input, m = matches))
 
-pairs <- extract_mul_pairs(cleaned_input)
+pairs <- extract_mul_pairs(paste0(target_chunks, collapse = ""))
 
 sum(sapply(pairs, prod))
 
@@ -76,11 +73,8 @@ do_input <- paste0("do()", input)
 # Extract the chunks bookended by do() and don't()
 pattern <- r"{do\(\).+?don't\(\)}"
 matches <- gregexpr(pattern = pattern, text = do_input)
-cleaned_input <- paste0(
-  unlist(regmatches(do_input, m = matches)),
-  collapse = ""
-)
+target_chunks <- unlist(regmatches(do_input, m = matches))
 
-df <- extract_mul_pairs(cleaned_input)
+df <- extract_mul_pairs(paste0(target_chunks, collapse = ""))
 
 sum(df$left * df$right)
