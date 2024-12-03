@@ -3,12 +3,12 @@ input <- readChar("2024/03-input.txt", file.info("2024/03-input.txt")$size)
 # Part 1
 
 extract_mul_pairs <- function(input) {
-  pattern <- r"{mul\(\d{1,3},\d{1,3}\)}"
+  pattern <- r"{mul\((\d{1,3},\d{1,3})\)}"
   matches <- gregexpr(pattern = pattern, text = input)
   muls <- unlist(regmatches(input, m = matches))
 
   pairs <- lapply(
-    strsplit(gsub(r"{mul\(|\)}", "", muls), ","),
+    strsplit(gsub(pattern, "\\1", muls), ","),
     as.integer
   )
 
