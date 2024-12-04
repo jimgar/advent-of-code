@@ -12,6 +12,7 @@ Listed alphabetically by handle. People use a mixture of base-only and different
 
 |Mastodon handle|Code|
 |---------------|----|
+|[@andi@sciences.social](https://sciences.social/@andi)|[Link](https://github.com/InductiveStep/aoc2024)|
 |[@ataustin@fosstodon.org](https://fosstodon.org/@ataustin)|[Link](https://github.com/ataustin/advent-of-code)|
 |[@jladata@fosstodon.org](https://fosstodon.org/@jladata)|[Link](https://github.com/jlacko/aoc2024)|
 |[@jrosell@mastodon.social](https://mastodon.social/@jrosell)|[Link](https://jrosell.github.io/AdventOfCode/)|
